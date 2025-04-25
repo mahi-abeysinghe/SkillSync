@@ -1,0 +1,201 @@
+.noty_topic {
+  font-size: 22px;
+  font-weight: 500;
+  color: #333;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 10px;
+}
+
+.noty_topic::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: linear-gradient(to bottom, #004c5d, #FF715B);
+  border-radius: 4px;
+}
+
+.noty_time {
+  font-size: 14px;
+  font-weight: 400;
+  color: #6c757d;
+  font-style: italic;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.noty_time::before {
+  content: '•';
+  color: #FF715B;
+  font-size: 18px;
+}
+
+.mark_redbtn {
+  background: linear-gradient(135deg, #004c5d, #006d85);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.08),
+             -5px -5px 10px rgba(255, 255, 255, 0.8);
+  position: relative;
+  overflow: hidden;
+}
+
+.mark_redbtn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: all 0.4s ease;
+}
+
+.mark_redbtn:hover {
+  background: linear-gradient(135deg, #005f75, #007d9a);
+  transform: translateY(-3px);
+  box-shadow: 7px 7px 14px rgba(0, 0, 0, 0.1),
+             -7px -7px 14px rgba(255, 255, 255, 0.9);
+}
+
+.mark_redbtn:hover::before {
+  left: 100%;
+}
+
+.noty_action_btn_con {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+}
+
+.post_card {
+  width: 100%;
+  background: linear-gradient(145deg, #ffffff, #f8f9fa);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.05),
+             -10px -10px 30px rgba(255, 255, 255, 0.8);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  margin-bottom: 30px;
+  border-left: 4px solid transparent;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(234, 239, 241, 0.6);
+}
+
+.post_card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 80%);
+  opacity: 0;
+  transform: rotate(30deg);
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.post_card:hover::before {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+.post_card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.08),
+             -15px -15px 40px rgba(255, 255, 255, 0.9);
+}
+
+.post_card.unread {
+  border-left: 4px solid #FF715B;
+  background: linear-gradient(145deg, #fff9f8, #fff0f0);
+}
+
+.continer_set {
+  flex: 1;
+}
+
+.not_found_box {
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  padding: 60px;
+  background: linear-gradient(145deg, #ffffff, #f8f9fa);
+  border-radius: 20px;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.05),
+             -10px -10px 30px rgba(255, 255, 255, 0.8);
+  margin-top: 50px;
+  border: 1px solid rgba(234, 239, 241, 0.6);
+}
+
+.not_found_img {
+  width: 200px;
+  height: 200px;
+  background-image: url('https://cdn-icons-png.flaticon.com/512/7486/7486754.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0 auto 30px;
+  opacity: 0.7;
+}
+
+.not_found_msg {
+  font-size: 18px;
+  color: #6c757d;
+  margin-bottom: 20px;
+}
+
+.not_found_btn {
+  background: linear-gradient(135deg, #004c5d, #006d85);
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.08),
+             -6px -6px 12px rgba(255, 255, 255, 0.8);
+  position: relative;
+  overflow: hidden;
+}
+
+.not_found_btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: all 0.4s ease;
+}
+
+.not_found_btn:hover {
+  background: linear-gradient(135deg, #FF715B, #ff9580);
+  transform: translateY(-3px);
+  box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.1),
+             -8px -8px 16px rgba(255, 255, 255, 0.9);
+}
+
+.not_found_btn:hover::before {
+  left: 100%;
+}
