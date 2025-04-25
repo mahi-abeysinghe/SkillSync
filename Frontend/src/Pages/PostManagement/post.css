@@ -1,0 +1,142 @@
+@import '../UserManagement/user.css';
+
+/* Media Upload Section Styles */
+.media-upload-section {
+  margin-bottom: 20px;
+  border: 2px dashed var(--border-color);
+  border-radius: 8px;
+  padding: 15px;
+  transition: all 0.3s ease;
+}
+
+.media-upload-section:focus-within {
+  border-color: var(--primary-color);
+}
+
+.media-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: var(--text-medium);
+  margin-bottom: 10px;
+}
+
+.media-preview-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+  margin: 15px 0;
+}
+
+.media-preview-item {
+  position: relative;
+  aspect-ratio: 16/9;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.media-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.media-input {
+  width: 100%;
+  padding: 10px;
+  border: 2px dashed var(--border-color);
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.media-input:hover {
+  border-color: var(--primary-color);
+}
+
+/* Dark mode adjustments */
+.dark-mode .media-label {
+  color: var(--text-light);
+}
+
+.dark-mode .media-input {
+  border-color: var(--text-light);
+}
+
+.dark-mode .media-preview-item {
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+}
+
+/* Floating Label Adjustments */
+.floating-label-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.floating-label-group .auth-input::placeholder {
+  color: transparent;
+}
+
+.floating-label-group .auth-input:focus::placeholder {
+  color: var(--text-light);
+}
+
+.floating-label-group .floating-label {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.2s ease;
+  pointer-events: none;
+  color: var(--text-medium);
+  padding: 0 5px;
+  font-size: 1em;
+  z-index: 1;
+}
+
+.floating-label-group.active .floating-label,
+.floating-label-group .auth-input:focus + .floating-label {
+  top: -12px;
+  font-size: 0.85em;
+  color: var(--primary-color);
+  background: transparent;
+}
+
+.dark-mode .floating-label-group.active .floating-label,
+.dark-mode .floating-label-group .auth-input:focus + .floating-label {
+  color: var(--primary-light);
+  background: transparent;
+}
+
+.floating-label-group textarea.auth-input + .floating-label {
+  top: 25px;
+}
+
+.floating-label-group textarea.auth-input:focus + .floating-label,
+.floating-label-group.active textarea.auth-input + .floating-label {
+  top: -12px;
+}
+
+/* Loading State */
+.auth-button.loading {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
